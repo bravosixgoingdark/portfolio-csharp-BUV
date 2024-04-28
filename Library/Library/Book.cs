@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-    class Book // Create a class called book
+    class Book
     {
-    private string Title; //properties = attributes of the book 
+    private string Title;
     private string Author;
     private string ISBN;
     private int AvailableCopies;
 
-    public string title { get { return Title; } } // getters and setters of a property. How would anything access this infomation
+    public string title { get { return Title; } }
     public string author { get { return Author; } }
     public string iSBN { get { return ISBN; } }
     public int availableCopies { get { return AvailableCopies; } }
 
 
-    public Book(string Title, String Author, String ISBN,int AvailableCopies) // This is a constructor, it says how an object of this class is made.
+    public Book(string Title, String Author, String ISBN,int AvailableCopies) 
     {
         this.Title = Title;
         this.Author = Author;
@@ -25,7 +25,7 @@ using System.Threading.Tasks;
         this.AvailableCopies = AvailableCopies;
     }
 
-    public bool loanBook() // basically a function  
+    public bool loanBook() 
     {
         if (AvailableCopies > 0)
         {
@@ -35,8 +35,10 @@ using System.Threading.Tasks;
         }
         else { return false; }
     }
-    public void returnBook(){
-        AvailableCopies++;
+
+    public override string ToString()
+    {
+        return Title + " " + Author;
     }
 }
 
